@@ -23,5 +23,5 @@ This is a Windows-based Inventory Management System developed using C#, Windows 
 - Clone or download the repository.
 - Ensure you have SQL Server or SQL Server LocalDB installed.
 - Open the solution in Visual Studio and build the project.
-- Run the DDL Script (provided in the repository) to create the necessary database tables.
+- Run the DDL Script (provided in the DDL.txt file associated with the project) to create the necessary database tables and popluated data as well.
 - Start the application and begin managing your products and companies.
