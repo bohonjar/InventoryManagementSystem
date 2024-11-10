@@ -1,0 +1,33 @@
+-- Create Companies Table
+CREATE TABLE Companies (
+    CompanyID INT NOT NULL AUTO_INCREMENT,
+    CompanyName VARCHAR(100) NULL,
+    Location VARCHAR(100) NULL,
+    PRIMARY KEY (CompanyID)
+);
+
+-- Create Products Table
+CREATE TABLE Products (
+    ProductID INT NOT NULL AUTO_INCREMENT,
+    ProductName VARCHAR(100) NULL,
+    Category VARCHAR(50) NULL,
+    Price DECIMAL(18, 2) NULL,
+    Quantity INT NULL,
+    CompanyID INT NULL,
+    PRIMARY KEY (ProductID),
+    FOREIGN KEY (CompanyID) REFERENCES Companies(CompanyID)
+);
+
+-- Insert Test Data for Companies
+INSERT INTO Companies (CompanyName, Location) 
+VALUES 
+('TechCorp', 'New York'), 
+('InnovateLtd', 'San Francisco');
+
+-- Insert Test Data for Products
+INSERT INTO Products (ProductName, Category, Price, Quantity, CompanyID) 
+VALUES 
+('Laptop', 'Electronics', 899.99, 100, 1),  -- Product for TechCorp
+('Smartphone', 'Electronics', 599.99, 50, 1),  -- Product for TechCorp
+('Software', 'Software', 299.99, 200, 2),  -- Product for InnovateLtd
+('Headphones', 'Accessories', 49.99, 150, 2);  -- Product for InnovateLtd
